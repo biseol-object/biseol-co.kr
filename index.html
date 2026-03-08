@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>비설 | 3D 프린팅 조형 오브제</title>
+  <meta name="description" content="비설은 조용한 형태와 레이어의 결을 담은 3D 프린팅 조형 작업과 커스텀 커미션을 선보입니다.">
+  <meta property="og:title" content="비설 | 3D 프린팅 조형 오브제">
+  <meta property="og:description" content="3D 프린팅 기반의 조형 작업과 커스텀 커미션.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/hero.svg">
+  <style>
+    :root{--bg:#0A0A0A; --card:#141414; --border:#2A2A2A; --text:#fff; --muted:#9a9a9a;}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter, Arial, Helvetica, sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+    a{text-decoration:none;color:inherit} img{display:block;max-width:100%}
+    .container{max-width:1280px;margin:0 auto;padding:0 16px} @media (min-width:640px){.container{padding:0 24px}}
+    .grid-bg{background:radial-gradient(circle at top, rgba(255,255,255,.12), transparent 35%),linear-gradient(to right, #1a1a1a 1px, transparent 1px),linear-gradient(to bottom, #1a1a1a 1px, transparent 1px);background-size:auto,40px 40px,40px 40px}
+    .topbar{position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(255,255,255,.1);backdrop-filter:blur(14px);background:rgba(0,0,0,.72)}
+    .topbar-inner{height:64px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:800;letter-spacing:-.02em;text-transform:uppercase;font-size:20px}
+    .desktop-nav,.desktop-cta{display:none}.mobile-btn{height:40px;width:40px;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:transparent;color:#fff}
+    .mobile-menu{display:none;border-top:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.95)} .mobile-menu.open{display:block}
+    .mobile-links{display:flex;flex-direction:column;gap:16px;padding:16px 0;color:#d1d1d1;font-size:14px}
+    @media (min-width:768px){.desktop-nav{display:flex;gap:24px;color:#c9c9c9;font-size:14px}.desktop-cta{display:block}.mobile-btn{display:none}}
+    .pill-white,.pill-outline{border-radius:999px;padding:12px 24px;font-size:14px;font-weight:600;display:inline-block}
+    .pill-white{background:#fff;color:#000}.pill-outline{border:1px solid rgba(255,255,255,.2);color:#fff}
+    .hero{padding:96px 0 64px;text-align:center;overflow:hidden}.hero h1{font-size:44px;line-height:.95;letter-spacing:-.05em;font-weight:800;font-style:italic;margin:0 0 24px}.hero p{color:#b0b0b0;font-size:16px;margin:0 0 32px}
+    .btn-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+    @media (min-width:640px){.hero{padding:112px 0 80px}.hero h1{font-size:72px}.hero p{font-size:18px}} @media (min-width:1024px){.hero h1{font-size:128px}}
+    .hero-visual{max-width:1152px;margin:48px auto 0;position:relative}.hero-card{position:relative;border:1px solid rgba(255,255,255,.1);border-radius:24px;overflow:hidden;background:#141414;aspect-ratio:16/9;box-shadow:0 25px 50px rgba(0,0,0,.35)}
+    .hero-card img,.gallery-card img,.toolkit-frame img,.material-card img{width:100%;height:100%;object-fit:cover}.overlay-grad{position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.88), transparent 55%)}
+    .note{display:none}@media (min-width:768px){.note{display:block;position:absolute;left:16px;top:16px;width:256px;border-radius:16px;border:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.6);padding:16px;text-align:left;backdrop-filter:blur(10px)}}
+    .note h4{margin:0 0 12px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.1);font-size:12px;color:#d1d1d1}.note .badge{margin-top:8px;border-radius:8px;background:rgba(255,255,255,.05);padding:8px;color:#b0b0b0;font-size:12px;border:1px solid rgba(255,255,255,.1)}
+    .explore{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);font-size:11px;letter-spacing:.25em;color:#9a9a9a;text-transform:uppercase}
+    .logos{border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1);padding:40px 0}.logos p{margin:0 0 32px;text-align:center;color:#777;font-size:14px}
+    .logo-list{display:flex;flex-wrap:wrap;gap:24px;justify-content:center;align-items:center}.logo-list span{font-size:16px;font-weight:800;color:rgba(255,255,255,.7)} @media (min-width:768px){.logo-list span{font-size:18px}}
+    section{padding:80px 0}@media (min-width:640px){section{padding:96px 0}}
+    .section-head{text-align:center;margin-bottom:40px}.section-head h2{font-size:32px;line-height:1.05;margin:0 0 16px}.section-head p{max-width:720px;margin:0 auto;color:#9a9a9a}@media (min-width:640px){.section-head h2{font-size:48px}}
+    .tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:32px}.tab{padding:10px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:transparent;color:#9a9a9a;cursor:pointer}.tab.active{background:#fff;color:#000}
+    .toolkit-frame{overflow:hidden;border:1px solid rgba(255,255,255,.1);border-radius:24px;background:#111;box-shadow:0 25px 50px rgba(0,0,0,.35)}
+    .toolkit-top{display:flex;gap:8px;align-items:center;padding:12px 16px;background:#1a1a1a;border-bottom:1px solid rgba(255,255,255,.1);font-size:12px;color:#777}.dots{display:flex;gap:6px}.dots span{display:block;width:12px;height:12px;border-radius:50%}
+    .toolkit-body{display:grid}.toolkit-preview{min-height:280px;display:flex;align-items:center;justify-content:center;padding:24px}.toolkit-preview img{max-height:320px;object-fit:contain}.toolkit-side{border-top:1px solid rgba(255,255,255,.1);padding:16px;background:#151515}
+    @media (min-width:1024px){.toolkit-body{grid-template-columns:1fr 260px}.toolkit-side{border-top:none;border-left:1px solid rgba(255,255,255,.1)}}
+    .tiny-head{font-size:12px;font-weight:800;color:#9a9a9a;margin-bottom:16px}.param-box{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);border-radius:10px;padding:12px;font:12px ui-monospace,SFMono-Regular,Menlo,monospace;color:#9a9a9a}
+    .full-btn{margin-top:16px;width:100%;border:0;border-radius:8px;padding:10px;background:#fff;color:#000;font-size:12px;font-weight:800}
+    .materials{border-top:1px solid rgba(255,255,255,.1);background:linear-gradient(to right, #1a1a1a 1px, transparent 1px),linear-gradient(to bottom, #1a1a1a 1px, transparent 1px);background-size:40px 40px}
+    .material-grid{display:grid;gap:24px;align-items:center}@media (min-width:1024px){.material-grid{grid-template-columns:repeat(3,1fr)}}
+    .panel{background:#141414;border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:24px}.label{font-size:12px;font-weight:700;color:#9a9a9a;margin-bottom:8px}.swatches{display:flex;gap:8px}.swatches span{display:block;width:32px;height:32px;border-radius:999px}
+    .material-card{position:relative;aspect-ratio:1;border:1px solid rgba(255,255,255,.1);border-radius:24px;overflow:hidden}.printing-pill{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);white-space:nowrap;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.8);padding:10px 16px;font-size:11px}
+    .spin{width:64px;height:64px;border-radius:50%;border:4px solid #444;border-top-color:#fff;animation:spin 1.1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+    .gallery-head,.features-head{display:flex;flex-direction:column;gap:16px;align-items:flex-start;justify-content:space-between;margin-bottom:48px}@media (min-width:768px){.gallery-head,.features-head{flex-direction:row;align-items:flex-end}}
+    .gallery-grid{display:grid;gap:24px}@media (min-width:768px){.gallery-grid{grid-template-columns:repeat(3,1fr)}}.gallery-card{position:relative;aspect-ratio:3/4;border:1px solid rgba(255,255,255,.1);overflow:hidden;border-radius:24px}.gallery-card .overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;background:linear-gradient(to top, rgba(0,0,0,.92), rgba(0,0,0,.18) 55%, transparent)}
+    .feature-grid{display:grid;gap:24px;grid-auto-rows:260px}@media (min-width:768px){.feature-grid{grid-template-columns:repeat(3,1fr);grid-auto-rows:300px}} .feature-card{position:relative;border:1px solid rgba(255,255,255,.1);border-radius:24px;overflow:hidden;background:#141414}.feature-main{position:relative}@media (min-width:768px){.feature-main{grid-column:span 2;grid-row:span 2}.feature-tall{grid-row:span 2}}
+    .feature-badge{position:absolute;right:16px;top:16px;max-width:220px;border-radius:14px;border:1px solid #4a4a4a;background:rgba(0,0,0,.5);padding:16px;backdrop-filter:blur(10px)}@media (min-width:640px){.feature-badge{right:24px;top:24px;max-width:320px}} .feature-copy{position:absolute;left:0;bottom:0;padding:24px}
+    .faq{border-top:1px solid rgba(255,255,255,.1)}.faq h2{font-size:32px;margin:0 0 16px}.faq-item{border-bottom:1px solid #2a2a2a;padding-bottom:16px;margin-bottom:16px}.faq-q{display:flex;justify-content:space-between;gap:16px;width:100%;background:none;border:0;color:#fff;text-align:left;font:inherit;padding:0;cursor:pointer}.faq-a{display:none;margin-top:16px;color:#9a9a9a;line-height:1.8;font-size:14px}.faq-item.open .faq-a{display:block}.plus{transition:transform .2s;color:#8a8a8a}.faq-item.open .plus{transform:rotate(45deg)}
+    footer{border-top:1px solid rgba(255,255,255,.1);background:#050505;overflow:hidden;padding:80px 0 48px}.footer-grid{display:grid;gap:40px;margin-bottom:80px}@media (min-width:640px){.footer-grid{grid-template-columns:repeat(2,1fr)}}@media (min-width:768px){.footer-grid{grid-template-columns:repeat(4,1fr);gap:48px;margin-bottom:96px}} .footer-grid h4{margin:0 0 16px}.footer-grid ul{list-style:none;padding:0;margin:0;display:grid;gap:8px;opacity:.8}.footer-bottom{display:flex;flex-direction:column;gap:12px;border-top:1px solid rgba(255,255,255,.2);padding-top:32px;font-size:12px;opacity:.6}@media (min-width:768px){.footer-bottom{flex-direction:row;justify-content:space-between;align-items:center}}.mega{margin-top:64px;text-align:center;font-size:20vw;line-height:1;font-style:italic;font-weight:800;letter-spacing:-.06em;opacity:.1;user-select:none}@media (min-width:640px){.mega{margin-top:96px;font-size:18vw}}
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">BISEOL</div>
+      <nav class="desktop-nav">
+        <a href="#gallery">작품</a>
+        <a href="#materials">제작 방식</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">문의</a>
+      </nav>
+      <div class="desktop-cta" style="display:flex;align-items:center;gap:12px;"><a href="https://www.biseol.com" style="font-size:13px;color:#c9c9c9">EN</a><a class="pill-white" href="#gallery">작품 보기</a></div>
+      <button class="mobile-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="container">
+        <div class="mobile-links">
+          <a href="#gallery">작품</a>
+          <a href="#materials">제작 방식</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">문의</a>
+          <a href="https://www.biseol.com">EN</a>
+          <a class="pill-white" href="#gallery" style="text-align:center">작품 보기</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero grid-bg">
+    <div class="container">
+      <h1>고요함이<br>형태가 될 때</h1>
+      <p>비설은 조용한 형태와 레이어의 결, 절제된 색감에서 출발한 3D 프린팅 조형 작업을 선보입니다.</p>
+      <div class="btn-row">
+        <a href="#gallery" class="pill-white">작품 보기</a>
+        <a href="#contact" class="pill-outline">커미션 문의</a>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-card">
+          <img src="images/hero.svg" alt="BISEOL hero artwork">
+          <div class="overlay-grad"></div>
+          <div class="note">
+            <h4>Material Notes</h4>
+            <div class="badge">무광 PLA 마감</div>
+<div class="badge">절제된 모노크롬 팔레트</div>
+<div class="badge">빛에 반응하는 표면 질감</div>
+          </div>
+          <div class="explore">Explore</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="logos">
+    <div class="container">
+      <p>Production Work</p>
+      <div class="logo-list" style="display:grid;gap:12px;justify-content:center;text-align:center">
+        <span>영화 제작 의상 파트 참여</span>
+      <span>배우 의상용 3D 프린팅 요소 제작</span>
+      <span>스크린 프로젝트용 의상 조형 작업</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>디지털에서 물성으로</h2>
+        <p>스케치와 모델링, 출력 세팅, 프린팅, 후가공의 과정을 거쳐 디지털 형태를 실제 오브제로 구현합니다.</p>
+      </div>
+
+      <div class="tabs" id="tabs"></div>
+
+      <div class="toolkit-frame">
+        <div class="toolkit-top">
+          <div class="dots"><span style="background:rgba(239,68,68,.2)"></span><span style="background:rgba(234,179,8,.2)"></span><span style="background:rgba(34,197,94,.2)"></span></div>
+          <span id="toolFile" style="margin-left:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"></span>
+        </div>
+        <div class="toolkit-body">
+          <div class="toolkit-preview"><img id="toolImage" src="" alt="Toolkit preview"></div>
+          <div class="toolkit-side">
+            <div class="tiny-head">PARAMETERS</div>
+            <div class="param-box" id="toolParams"></div>
+            <div class="full-btn" id="toolCta" style="display:flex;align-items:center;justify-content:center;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="materials" class="materials">
+    <div class="container">
+      <div class="section-head">
+        <h2>레이어 위에 쌓이는 디테일</h2>
+        <p>정밀한 제작 과정과 조형적 감각이 만나 형태와 질감이 완성됩니다.</p>
+      </div>
+      <div class="material-grid">
+        <div class="panel">
+          <div class="label">재료</div>
+          <div class="param-box" style="font-family:inherit">PLA Matte — Arctic White</div>
+          <div class="full-btn" style="display:flex;align-items:center;justify-content:center;">PLA Matte / Arctic White</div>
+          <div style="height:24px"></div>
+          <div class="label">Finish</div>
+          <div class="swatches">
+            <span style="background:#fff;border:2px solid #fff"></span>
+            <span style="background:rgba(107,114,128,.5)"></span>
+            <span style="background:#000;border:1px solid rgba(255,255,255,.2)"></span>
+          </div>
+        </div>
+
+        <div class="material-card">
+          <img src="images/material.svg" alt="Texture detail">
+          <div class="printing-pill">Printing... 14h 32m remaining</div>
+        </div>
+
+        <div class="panel">
+          <div class="label">보기 모드</div>
+          <div style="display:flex;aspect-ratio:16/9;align-items:center;justify-content:center;border-radius:12px;border:1px solid rgba(255,255,255,.1);background:#0A0A0A">
+            <div class="spin"></div>
+          </div>
+          <div style="height:24px"></div>
+          <div class="label">보기 모드</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <div class="tab" style="margin:0;border-radius:8px;text-align:center;cursor:default">레이어 보기</div>
+            <div class="tab active" style="margin:0;border-radius:8px;text-align:center;cursor:default">솔리드 보기</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container">
+      <div class="gallery-head">
+        <h2 style="margin:0;font-size:32px">주요 작업</h2>
+        <a href="#contact">작품 문의하기</a>
+      </div>
+      <div class="gallery-grid">
+        <article class="gallery-card">
+          <img src="images/work-1.svg" alt="설 시리즈">
+          <div class="overlay">
+            <h3 style="margin:0 0 8px">설 시리즈</h3>
+            <p style="margin:0;color:#c7c7c7;font-size:14px">내리는 눈의 정적과 밀도를 흰 조형 언어로 풀어낸 연작.</p>
+          </div>
+        </article>
+        <article class="gallery-card">
+          <img src="images/work-2.svg" alt="유기적 흐름">
+          <div class="overlay">
+            <h3 style="margin:0 0 8px">유기적 흐름</h3>
+            <p style="margin:0;color:#c7c7c7;font-size:14px">바람과 물의 움직임을 닮은 곡선 구조를 입체로 구현한 작업.</p>
+          </div>
+        </article>
+        <article class="gallery-card">
+          <img src="images/work-3.svg" alt="기하의 균형">
+          <div class="overlay">
+            <h3 style="margin:0 0 8px">기하의 균형</h3>
+            <p style="margin:0;color:#c7c7c7;font-size:14px">절제된 각도와 반복되는 면의 리듬을 탐구한 조형 오브제.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="materials">
+    <div class="container">
+      <div class="features-head">
+        <h2 style="margin:0;font-size:32px">정교하게 제작된<br>형태</h2>
+        <div class="tab" style="margin:0;cursor:default">재료와 프로세스</div>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card feature-main">
+          <img src="images/feature-1.svg" alt="재료와 조형의 균형" style="opacity:.6">
+          <div class="feature-badge">
+            <div style="font-size:12px;font-weight:800;margin-bottom:8px">Sustainable</div>
+            <div style="font-size:10px;color:#9a9a9a;margin-bottom:8px">작업의 성격에 맞는 출력 재료와 후가공 방식을 선택해 형태와 질감을 조율합니다.</div>
+            <div class="full-btn" style="margin-top:0;padding:6px 10px;font-size:10px;display:flex;align-items:center;justify-content:center;">Material Notes</div>
+          </div>
+          <div class="feature-copy"><h3 style="margin:0 0 4px">재료와 조형의 균형</h3><p style="margin:0;font-size:14px;color:#9a9a9a">작업의 성격에 맞는 출력 재료와 후가공 방식을 선택해 형태와 질감을 조율합니다.</p></div>
+        </div>
+        <div class="feature-card feature-tall">
+          <img src="images/feature-2.svg" alt="커스텀 커미션" style="opacity:.6">
+          <div class="feature-copy"><h3 style="margin:0 0 4px">커스텀 커미션</h3><p style="margin:0;font-size:14px;color:#9a9a9a">공간, 목적, 콘셉트에 맞춰 맞춤형 조형 작업을 진행합니다.</p></div>
+        </div>
+        <div class="feature-card">
+          <img src="images/feature-3.svg" alt="공간과의 조화" style="opacity:.6">
+          <div class="feature-copy"><h3 style="margin:0 0 4px">공간과의 조화</h3><p style="margin:0;font-size:14px;color:#9a9a9a">현대적인 인테리어와 전시 환경에 자연스럽게 어우러지는 오브제를 제안합니다.</p></div>
+        </div>
+        <div class="feature-card">
+          <img src="images/feature-4.svg" alt="빛과 그림자" style="opacity:.6">
+          <div class="feature-copy"><h3 style="margin:0 0 4px">빛과 그림자</h3><p style="margin:0;font-size:14px;color:#9a9a9a">표면의 결이 빛에 따라 다르게 드러나며 조형의 깊이를 만듭니다.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <div class="container" style="max-width:800px">
+      <h2>자주 묻는 질문</h2>
+      <div class="faq-item open">
+        <button class="faq-q" aria-expanded="true">
+          <span>모든 작업은 3D 프린팅으로 제작되나요?</span>
+          <span class="plus">+</span>
+        </button>
+        <div class="faq-a">네. 모든 작업은 디지털 모델링을 바탕으로 설계되며, 3D 프린팅과 후가공을 거쳐 완성됩니다.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>커미션 제작 기간은 얼마나 걸리나요?</span>
+          <span class="plus">+</span>
+        </button>
+        <div class="faq-a">작업 규모와 난이도에 따라 다르지만, 보통 상담 후 2주에서 4주 정도 소요됩니다.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>사용 가능한 재료와 색상은 무엇인가요?</span>
+          <span class="plus">+</span>
+        </button>
+        <div class="faq-a">기본적으로 PLA 계열 소재를 사용하며, 작업 성격에 따라 색상과 표면 마감 옵션을 조정할 수 있습니다.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>해외 배송도 가능한가요?</span>
+          <span class="plus">+</span>
+        </button>
+        <div class="faq-a">작품 크기와 포장 조건에 따라 일부 해외 배송이 가능합니다. 문의 시 국가와 수량을 함께 알려주세요.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>탐색</h4>
+          <ul>
+            <li><a href="#gallery">작품</a></li>
+            <li><a href="#materials">제작 방식</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>연락</h4>
+          <ul>
+            <li><a href="mailto:biseol.object@gmail.com">biseol.object@gmail.com</a></li>
+            <li><a href="https://www.instagram.com/biseol" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>작업 범위</h4>
+          <ul>
+            <li>커스텀 커미션</li>
+            <li>오브제 디자인</li>
+            <li>협업 작업</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>문의</h4>
+          <p style="margin:0 0 8px;font-size:12px">작업 문의는 이메일 또는 인스타그램 DM으로 보내주세요.</p>
+          <a class="pill-white" href="mailto:biseol.object@gmail.com">이메일 보내기</a>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 BISEOL</p><p>Seoul, Korea</p></div>
+      <div class="mega">BISEOL</div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      const isOpen = mobileMenu.classList.contains('open');
+      menuBtn.textContent = isOpen ? '✕' : '☰';
+      menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      menuBtn.textContent = '☰';
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+    const toolkit = [{"file": "BISEOL / concept_snow_01.obj", "image": "images/toolkit-design.svg", "params": ["단계: 디자인", "표면: Smooth", "스케일: 100%", "광원 테스트: On"], "cta": "디지털 형태 설계"},{"file": "BISEOL / project_snow_01.gcode", "image": "images/toolkit-slice.svg", "params": ["레이어: 0.12mm", "속도: 60mm/s", "온도: 210°C", "Retraction: 5mm"], "cta": "출력 세팅 조정"},{"file": "BISEOL / print_session_01", "image": "images/toolkit-print.svg", "params": ["진행률: 82%", "노즐: Active", "재료: PLA Matte", "예상 시간: 2h 14m"], "cta": "출력 진행"},{"file": "BISEOL / finish_notes_01", "image": "images/toolkit-finish.svg", "params": ["샌딩: Fine", "질감: Soft Matte", "검수: Passed", "에디션: Signed"], "cta": "후가공 및 마감"}];
+    let active = 2;
+    const tabs = document.getElementById('tabs');
+    const toolFile = document.getElementById('toolFile');
+    const toolImage = document.getElementById('toolImage');
+    const toolParams = document.getElementById('toolParams');
+    const toolCta = document.getElementById('toolCta');
+    function renderToolkit() {
+      tabs.innerHTML = '';
+      const labels = ['Design', 'Slice', 'Print', 'Finish'];
+      toolkit.forEach((t, i) => {
+        const b = document.createElement('button');
+        b.className = 'tab' + (i === active ? ' active' : '');
+        b.textContent = labels[i];
+        b.onclick = () => { active = i; renderToolkit(); };
+        tabs.appendChild(b);
+      });
+      const cur = toolkit[active];
+      toolFile.textContent = cur.file;
+      toolImage.src = cur.image;
+      toolParams.innerHTML = cur.params.map(p => `<div>${p}</div>`).join('');
+      toolCta.textContent = cur.cta;
+    }
+    renderToolkit();
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        item.classList.toggle('open');
+        const isOpen = item.classList.contains('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
+  </script>
+</body>
+</html>
